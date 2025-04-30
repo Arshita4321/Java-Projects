@@ -73,6 +73,14 @@ public class DigitalArtCanvas  extends JFrame {
         colorPreview.setBackground(Color.BLACK);
         controls.add(colorPreview);
 
+        JLabel status = new JLabel("X: 0 Y: 0");
+            add(status, BorderLayout.NORTH);
+        drawArea.addMouseMotionListener(new MouseMotionAdapter() {
+            public void mouseMoved(MouseEvent e) {
+                status.setText("X: " + e.getX() + " Y: " + e.getY());
+            }
+        });
+
         add(controls,BorderLayout.SOUTH);
 
         setVisible(true);
